@@ -51,11 +51,11 @@ impl<M: Unsigned + Integer, T: ConstantSize<M>> MaybeMutSizeCollection<usize> fo
     }
 
     fn size_allocated_in_bytes(&self) -> usize {
-        todo!()
+        self.size_allocated_in_bits() / 8
     }
 
     fn size_used_in_bits(&self) -> usize {
-        todo!()
+        self.len() * Self::ITEM_SIZE
     }
 
     fn size_used_in_bytes(&self) -> usize {
